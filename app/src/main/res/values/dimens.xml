@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="rv_movies_span">3</integer>
+
+    <dimen name="match_constraint">0dp</dimen>
+
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="elevation_medium">16dp</dimen>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_xxsmall">10dp</dimen>
+    <dimen name="margin_xxxsmall">12dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_xmedium">20dp</dimen>
+    <dimen name="margin_xxmedium">22dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="margin_xxlarge">70dp</dimen>
+
+
+    <dimen name="circularprogressbar_diameter">100dp</dimen>
+
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_xsmall">11sp</dimen>
+    <dimen name="text_size_xxsmall">12sp</dimen>
+    <dimen name="text_size_xxxsmall">13sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_xmedium">16sp</dimen>
+    <dimen name="text_size_xxmedium">18sp</dimen>
+    <dimen name="text_size_xxxmedium">20sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+</resources>

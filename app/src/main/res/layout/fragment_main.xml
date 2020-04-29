@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_background">
+
+    <FrameLayout
+        android:id="@+id/progress_circular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/match_constraint"
+        android:elevation="@dimen/elevation"
+        android:background="@color/app_background"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ProgressBar
+            android:layout_width="@dimen/circularprogressbar_diameter"
+            android:layout_height="@dimen/circularprogressbar_diameter"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.ProgressBar"/>
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/empty_list_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/margin_xmedium"
+        android:background="@color/app_background"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/tv_oops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oops_we_haven_t_got_that"
+            style="@style/BoldTextAppearance"
+            android:textSize="@dimen/text_size_xxxmedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_searching_for_other_movies_and_tv_shows"
+            style="@style/TitleTextAppearance"
+            app:layout_constraintTop_toBottomOf="@id/tv_oops"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/margin_xmedium"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/margin_xxxsmall"
+        android:elevation="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/back_button" />
+
+        <TextView
+            android:id="@+id/appbar_title"
+            style="@style/TitleTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxxsmall"
+            android:fontFamily="@font/titillium_web_regular"
+            android:text="@string/romantic_comedy"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_search"
+            android:contentDescription="@string/search_button"/>
+
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_search_cancel"
+            app:layout_constraintStart_toEndOf="@id/img_back"
+            android:layout_marginStart="@dimen/margin_xxxsmall"
+            android:hint="@string/search"
+            style="@style/TitleTextAppearance"
+            android:textSize="@dimen/text_size_xxmedium"
+            android:inputType="textCapWords"
+            android:visibility="gone"
+            android:importantForAutofill="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_xxsmall"
+        android:paddingBottom="@dimen/margin_xxlarge"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:spanCount="3"
+        tools:itemCount="20"
+        tools:listitem="@layout/item_movie" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
