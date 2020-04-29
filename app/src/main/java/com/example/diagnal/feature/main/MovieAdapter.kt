@@ -54,7 +54,7 @@ class MovieAdapter(private val mContext: Context) : RecyclerView.Adapter<MovieAd
     /**
      * ViewHolder class that is provided by this adapter
      */
-    inner class ViewHolder(private val itemMovieBinding: ItemMovieBinding) : RecyclerView.ViewHolder(itemMovieBinding.root) {
+    inner class ViewHolder(itemMovieBinding: ItemMovieBinding) : RecyclerView.ViewHolder(itemMovieBinding.root) {
         val itemBinding: ItemMovieBinding = itemMovieBinding
     }
 }
@@ -64,15 +64,11 @@ class MarginItemDecoration(private val span: Int,private val spaceHeight: Int) :
     override fun getItemOffsets(outRect: Rect, view: View,
                                 parent: RecyclerView, state: RecyclerView.State) {        with(outRect) {
         val position = parent.getChildAdapterPosition(view)
-        if (position in 0..span) {
+        if (position in 0 until span) {
             top = spaceHeight
         }
-        if(position%span == 0)
+        if(position%span in 0 until span)
             right = spaceHeight
-
-        if((position+1)%span == 0)
-            left = spaceHeight
-        bottom = spaceHeight*2
     }
     }
 }
